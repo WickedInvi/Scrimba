@@ -1,0 +1,40 @@
+/* DON'T TOUCH THIS! */
+/* This part of the styling is given from the challange */
+body {
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+/* DON'T TOUCH THIS! */
+
+/* ==========================
+     Write your solution here!
+    ========================== */
+
+/* Layout */
+
+/* Buttons */
+
+.btn {
+	padding: 10px 25px;
+	text-decoration: none;
+	color: #fff;
+}
+
+.btn:hover,
+.btn:focus {
+	background-color: darkgoldenrod;
+}
+
+.btn-primary {
+	background-color: firebrick;
+}
+
+.btn-accent {
+	background-color: yellowgreen;
+	font-size: 20px;
+	color: blue;
+}
