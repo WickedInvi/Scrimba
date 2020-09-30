@@ -1,0 +1,105 @@
+/* General */
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-size: 18px;
+	font-family: 'Lato', sans-serif;
+	color: #2e354f;
+	margin: auto;
+}
+
+/* Typography */
+
+h1,
+h2,
+strong {
+	font-weight: 900;
+}
+
+h1 {
+	font-size: 36px;
+	color: white;
+}
+
+h2 {
+	font-size: 24px;
+	color: #ef5839;
+	margin-bottom: 30px;
+	padding-top: 30px;
+}
+
+a {
+	color: #ef5839;
+}
+
+a:hover,
+a:focus {
+	color: green;
+}
+
+/* Layout */
+
+.container {
+	max-width: 620px;
+	margin: auto;
+}
+
+header {
+	background-color: #2e354f;
+	padding: 45px 0;
+}
+
+.section-one {
+	background-color: #fff;
+	margin: auto;
+}
+
+.section-two {
+	color: white;
+	background-color: #2e354f;
+	margin: auto;
+}
+
+p {
+	margin: 25px 0;
+}
+
+img {
+	width: 100%;
+}
+
+/* Buttons */
+
+.btn {
+	padding: 10px 25px;
+	margin: 10px 10px 10px 0;
+	display: inline-block;
+	text-decoration: none;
+	font-weight: 900;
+}
+
+.btn-light {
+	color: #2e354f;
+	background-color: #fff;
+}
+
+.btn-light:hover,
+.btn-light:focus {
+	color: #fff;
+	background-color: #ef5839;
+}
+
+.btn-accent {
+	color: #fff;
+	background-color: #ef5839;
+}
+
+.btn-accent:hover,
+.btn-accent:focus {
+	color: #2e354f;
+	background-color: #fff;
+}
