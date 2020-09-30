@@ -49,3 +49,10 @@ a {
 	font-weight: 900;
 	margin: 30px;
 }
+
+.btn:hover,
+.btn:focus {
+	background-color: #ef8210;
+	color: #2e354f;
+	transition: 0.5s;
+}
