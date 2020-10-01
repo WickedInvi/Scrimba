@@ -1,0 +1,31 @@
+html,
+body {
+	margin: 0;
+	padding: 50px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
+	color: white;
+	background-color: #333;
+}
+
+#overlay {
+	display: none; /* Hide the element */
+	width: 100%; /* Fill the witdth */
+	height: 100%; /* Fill the height*/
+	position: absolute; /* Fixes the position so we are able to use absolute position bellow */
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+#modal {
+	background-color: #999999;
+	max-width: 600px;
+	margin: auto;
+	padding: 20px;
+	height: 200px;
+	position: relative;
+	top: 30%;
+}
