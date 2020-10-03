@@ -11,12 +11,12 @@ const hideAllSlides = () => {
     slide.classList.remove('carousel__item--visible');
     slide.classList.add('carousel__item--hidden');
   }
-  console.log('hidden all');
 };
 
 const nextSlide = () => {
   hideAllSlides();
 
+  // Check if slide position is our of bound
   if (slidePosition === totalSlides) {
     slidePosition = 0;
   } else {
@@ -28,6 +28,7 @@ const nextSlide = () => {
 const prevSlide = () => {
   hideAllSlides();
 
+  // Check if slide position is our of bound
   if (slidePosition === 0) {
     slidePosition = totalSlides;
   } else {

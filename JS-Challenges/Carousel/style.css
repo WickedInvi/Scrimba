@@ -30,6 +30,7 @@ body {
 .carousel__item,
 .carousel__item--hidden {
   display: none;
+  animation: fadeVisibility 0.5s;
 }
 
 .carousel__item--visible {
@@ -57,4 +58,13 @@ body {
 .carousel__button:hover,
 .carousel__button:focus {
   background-color: blanchedalmond;
+}
+
+@keyframes fadeVisibility {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
