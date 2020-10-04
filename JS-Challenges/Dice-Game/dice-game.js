@@ -130,7 +130,6 @@ rollBtn.addEventListener('click', () => {
 resetBtn.addEventListener('click', () => {
   gameReset();
   if (playerOneTotalWins == maxWins || playerTwoTotalWins == maxWins) {
-    resetBtn.style.bottom = '50px';
     masterReset();
   }
 });

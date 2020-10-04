@@ -20,12 +20,11 @@ body {
 h1 {
   margin: auto;
   text-align: center;
-  margin-bottom: 40px;
+  padding-bottom: 40px;
 }
 
 .main-container {
   display: flex;
-  border: 5px solid black;
   justify-content: space-evenly;
 }
 
@@ -119,4 +118,37 @@ button:hover {
 
 #game {
   display: none;
+}
+
+@media only screen and (max-width: 1500px) {
+  .main-container {
+    flex-direction: column;
+    margin: 10px;
+  }
+  .total-score__title {
+    font-size: 30px;
+    color: red;
+  }
+
+  .body {
+    width: 100%;
+  }
+
+  .scoreboard-container,
+  .container,
+  .total-score {
+    padding: 10px 0;
+    margin: 2px 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .total-score {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  h1 {
+    padding: 0;
+  }
 }
