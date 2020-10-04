@@ -129,9 +129,6 @@ rollBtn.addEventListener('click', () => {
 
 resetBtn.addEventListener('click', () => {
   gameReset();
-  console.log(maxWins);
-  console.log(playerOneTotalWins);
-  console.log(playerTwoTotalWins);
   if (playerOneTotalWins == maxWins || playerTwoTotalWins == maxWins) {
     resetBtn.style.bottom = '50px';
     masterReset();
