@@ -1,13 +1,11 @@
-// Game state
-const winCondition = 20;
-let playerOneScore = 0;
-playerTwoScore = 0;
-playerOneTurn = true;
-// Additional to challenge adding a turn as Player one always has advantege
-let playerOneRolls = 0;
-playerTwoRolls = 0;
-
 // Selectors
+const scoreboard = document.getElementById('scoreboard');
+const game = document.getElementById('game');
+const setRules = document.getElementById('setRules');
+
+const playerOneWins = document.getElementById('playerOneWins');
+const playerTwoWins = document.getElementById('playerTwoWins');
+
 const playerOneScoreboard = document.getElementById('playerOneScoreboard');
 const playerTwoScoreboard = document.getElementById('playerTwoScoreboard');
 
@@ -16,8 +14,23 @@ const playerTwoDice = document.getElementById('playerTwoDice');
 
 const rollBtn = document.getElementById('rollBtn');
 const resetBtn = document.getElementById('resetBtn');
+const setGamesBtn = document.getElementById('setGamesBtn');
 
 const message = document.getElementById('message');
+const numberOfWinsTitle = document.getElementById('numberOfWinsTitle');
+const winsRequired = document.getElementById('winsRequired');
+
+// Game state
+const winCondition = 20;
+let maxWins = 0;
+let playerOneScore = 0;
+playerTwoScore = 0;
+playerOneTurn = true;
+playerOneTotalWins = 0;
+playerTwoTotalWins = 0;
+// Additional to challenge adding a turn as Player one always has advantege
+let playerOneRolls = 0;
+playerTwoRolls = 0;
 
 // Logic
 const gameReset = () => {
@@ -30,13 +43,56 @@ const gameReset = () => {
   playerTwoDice.textContent = '-';
   playerOneRolls = 0;
   playerTwoRolls = 0;
-  rollBtn.style.display = 'block';
   resetBtn.style.display = 'none';
+  rollBtn.style.display = 'block';
+  message.textContent = 'Player 1 Turn';
 };
 
+const masterReset = () => {
+  console.log('Master Reset has been executed');
+  gameReset();
+  numberOfWinsTitle.textContent = 'Select number required to win 1-10';
+  maxWins = 0;
+  game.style.display = 'none';
+  setRules.style.display = 'block';
+  playerOneWins.textContent = '0';
+  playerTwoWins.textContent = '0';
+  winsRequired.textContent = 'Are you ready to roll 🎲🎲🎲';
+
+  let rounds = playerOneTotalWins + playerTwoTotalWins;
+  for (i = 0; i <= rounds; i++) {
+    scoreboard.deleteRow(2);
+  }
+};
 const gameOver = () => {
+  addResults(playerOneScore, playerTwoScore);
   rollBtn.style.display = 'none';
   resetBtn.style.display = 'block';
+};
+
+const addResults = (playerOneScore, playerTwoScore) => {
+  const finalScoreRow = document.createElement('tr');
+  const playerOneFinalScore = document.createElement('td');
+  const playerTwoFinalScore = document.createElement('td');
+  const winner = document.createElement('td');
+
+  playerOneFinalScore.textContent = playerOneScore;
+  playerTwoFinalScore.textContent = playerTwoScore;
+  if (playerOneScore > playerTwoScore) {
+    winner.textContent = 'Player 1';
+    playerOneTotalWins++;
+    playerOneWins.textContent = playerOneTotalWins;
+  } else {
+    winner.textContent = 'Player 2';
+    playerTwoTotalWins++;
+    playerTwoWins.textContent = playerTwoTotalWins;
+  }
+
+  finalScoreRow.appendChild(playerOneFinalScore);
+  finalScoreRow.appendChild(playerTwoFinalScore);
+  finalScoreRow.appendChild(winner);
+
+  scoreboard.appendChild(finalScoreRow);
 };
 
 rollBtn.addEventListener('click', () => {
@@ -71,4 +127,24 @@ rollBtn.addEventListener('click', () => {
   }
 });
 
-resetBtn.addEventListener('click', gameReset);
+resetBtn.addEventListener('click', () => {
+  gameReset();
+  console.log(maxWins);
+  console.log(playerOneTotalWins);
+  console.log(playerTwoTotalWins);
+  if (playerOneTotalWins == maxWins || playerTwoTotalWins == maxWins) {
+    resetBtn.style.bottom = '50px';
+    masterReset();
+  }
+});
+
+setGamesBtn.addEventListener('click', () => {
+  maxWins = document.getElementById('numberOfWins').value;
+  if (maxWins <= 0 || maxWins > 10) {
+    alert('Invalid number of wins');
+  } else {
+    winsRequired.textContent = `First to win ${maxWins} out of ${maxWins * 2 - 1}`;
+    game.style.display = 'block';
+    setRules.style.display = 'none';
+  }
+});

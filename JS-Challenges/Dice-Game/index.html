@@ -7,27 +7,64 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <div class="container">
-      <h1 id="message">Player 1 Turn</h1>
-      <div class="players">
-        <div id="playerOne">
-          <h1>
-            Score:
-            <span id="playerOneScoreboard">0</span>
-          </h1>
-          <div id="playerOneDice" class="dice active">-</div>
+    <header>
+      <div class="header__title">
+        <h1>Roll the 🎲🎲🎲</h1>
+      </div>
+    </header>
+    <div class="main-container">
+      <div class="scoreboard-container">
+        <table id="scoreboard">
+          <tr>
+            <th colspan="3">Scoreboard</th>
+          </tr>
+          <tr>
+            <th>Player 1</th>
+            <th>Player 2</th>
+            <th>Winner</th>
+          </tr>
+          <div id="gameStats"></div>
+        </table>
+      </div>
+      <!-- scoreboard -->
+
+      <div class="container">
+        <div id="setRules">
+          <label for="numberOfWins" id="numberOfWinsTitle">Select number of wins required (1-10)</label>
+          <input type="number" id="numberOfWins" min="1" max="10" value="1" />
+          <button id="setGamesBtn">Set</button>
         </div>
-        <div id="playerTwo">
-          <h1>
-            Score:
-            <span id="playerTwoScoreboard">0</span>
-          </h1>
-          <div id="playerTwoDice" class="dice">-</div>
+        <h2 id="winsRequired">Are you ready to roll 🎲🎲🎲</h2>
+
+        <div id="game">
+          <h3 id="message">Player 1 Turn</h3>
+          <div class="players">
+            <div id="playerOne">
+              <h3>
+                Score:
+                <span id="playerOneScoreboard">0</span>
+              </h3>
+              <div id="playerOneDice" class="dice active">-</div>
+            </div>
+            <div id="playerTwo">
+              <h3>
+                Score:
+                <span id="playerTwoScoreboard">0</span>
+              </h3>
+              <div id="playerTwoDice" class="dice">-</div>
+            </div>
+          </div>
+
+          <button id="rollBtn">Roll Dice 🎲</button>
+          <button id="resetBtn">Reset Game 🔁</button>
         </div>
       </div>
+      <!-- container -->
 
-      <button id="rollBtn">Roll Dice 🎲</button>
-      <button id="resetBtn">Reset Game 🔁</button>
+      <div class="total-score">
+        <p class="total-score__title">Player 1 Wins: <span id="playerOneWins">0</span></p>
+        <p class="total-score__title">Player 2 Wins: <span id="playerTwoWins">0</span></p>
+      </div>
     </div>
     <script src="./dice-game.js"></script>
   </body>
