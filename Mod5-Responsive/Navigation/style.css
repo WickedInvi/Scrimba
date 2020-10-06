@@ -17,10 +17,13 @@ h1 {
 .subtitle {
   font-size: 1rem;
   text-transform: capitalize;
-
   color: #1792d2;
 }
 
+nav {
+  display: flex;
+  justify-content: center;
+}
 .nav-link {
   position: relative;
   text-transform: uppercase;
@@ -29,6 +32,7 @@ h1 {
   margin: 0 1em;
   letter-spacing: 0.2rem;
   padding: 0.3em;
+  cursor: context-menu;
 }
 
 .nav-link::after {
