@@ -31,7 +31,6 @@ header {
   .site-title {
     margin: 1em;
     text-align: center;
-
   }
 
   .subtitle {
@@ -41,7 +40,6 @@ header {
     margin: 0 auto;
     text-transform: capitalize;
     letter-spacing: 0.2rem;
-
   }
 
   nav {
@@ -74,7 +72,6 @@ header {
 }
 
 main {
-
   article {
     margin: 1em 0;
     display: flex;
@@ -85,7 +82,8 @@ main {
       color: #143774;
     }
 
-    .article-body {}
+    .article-body {
+    }
 
     .article-read-more {
       display: block;
@@ -110,7 +108,6 @@ main {
 
     .article-title {
       margin-bottom: 1em;
-      ;
     }
 
     .article-info {
@@ -133,7 +130,6 @@ main {
 
     .article-title {
       margin-bottom: 1em;
-
     }
 
     .article-recent-secondary {
@@ -151,8 +147,10 @@ main {
     flex-direction: row;
   }
 
-  nav {
-    flex-direction: row;
+  header {
+    nav {
+      flex-direction: row;
+    }
   }
 
   main {
@@ -169,7 +167,8 @@ main {
       &-main {
         margin: 0;
       }
-      img {}
+      img {
+      }
     }
   }
 
@@ -179,8 +178,6 @@ main {
 
   .article-recent {
     justify-content: space-between;
-
-
   }
 
   .article-recent-main {
@@ -191,7 +188,7 @@ main {
     width: 30%;
   }
 
-    .article-img {
+  .article-img {
     width: 100%;
     min-height: 250px;
     object-fit: cover;
@@ -203,7 +200,6 @@ aside {
     order: 0;
     margin: 1.3em 0;
     color: #143774;
-
   }
 
   img {
@@ -217,28 +213,35 @@ aside {
   }
 
   .sidebar-widget {
-    border: 20px solid #EBEBEB;
+    border: 20px solid #ebebeb;
     margin-bottom: 2em;
     display: flex;
     flex-direction: column;
 
     img {
       order: 1;
-
     }
   }
 
   .widget-title {
     color: #143774;
-
   }
 
-  .widget-body {}
-
+  .widget-body {
+  }
 
   .widget-post-title {
     color: #143774;
   }
+}
 
+footer {
+  padding: 50px;
+  color: #fff;
+  background-color: #143774;
+  text-align: center;
 
+  P {
+    margin: 1em;
+  }
 }

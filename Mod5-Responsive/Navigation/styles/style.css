@@ -179,7 +179,7 @@ main .article-recent .article-info {
         -ms-flex-direction: row;
             flex-direction: row;
   }
-  nav {
+  header nav {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -245,7 +245,7 @@ aside .widget-body {
 }
 
 aside .sidebar-widget {
-  border: 20px solid #EBEBEB;
+  border: 20px solid #ebebeb;
   margin-bottom: 2em;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -268,5 +268,16 @@ aside .widget-title {
 
 aside .widget-post-title {
   color: #143774;
+}
+
+footer {
+  padding: 50px;
+  color: #fff;
+  background-color: #143774;
+  text-align: center;
+}
+
+footer P {
+  margin: 1em;
 }
 /*# sourceMappingURL=style.css.map */
